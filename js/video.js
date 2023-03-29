@@ -72,6 +72,7 @@ muteButton.addEventListener("click", function() {
 
 var slider = document.querySelector("#slider");
 var volumeDisplay = document.querySelector("#volume");
+volumeDisplay.textContent = "100%";
 slider.addEventListener("input", function() {
 	video.volume = this.value / 100;
 	volumeDisplay.textContent = this.value + "%";
