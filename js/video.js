@@ -14,7 +14,13 @@ var playButton = document.querySelector("#play");
 playButton.addEventListener("click", function() {
 	console.log("Play Video");
 	video.play();
+	updateVolumeDisplay();
   });
+
+  function updateVolumeDisplay() {
+	var volume = video.volume * 100;
+	document.querySelector("#volume").textContent = volume + "%";
+  }
 
 // Pause Button - Pause the video.
 
@@ -72,7 +78,7 @@ muteButton.addEventListener("click", function() {
 
 var slider = document.querySelector("#slider");
 var volumeDisplay = document.querySelector("#volume");
-volumeDisplay.textContent = "100%";
+
 slider.addEventListener("input", function() {
 	video.volume = this.value / 100;
 	volumeDisplay.textContent = this.value + "%";
